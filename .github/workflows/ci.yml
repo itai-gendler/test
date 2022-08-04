@@ -79,4 +79,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/itai-gendler/test:latest
+          tags: ghcr.io/itai-gendler/hola:latest
