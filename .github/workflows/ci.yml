@@ -84,4 +84,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/itai-gendler/test:${{ steps.vars.outputs.sha_short }}
+          tags: ghcr.io/itai-gendler/test:latest
