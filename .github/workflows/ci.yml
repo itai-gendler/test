@@ -66,3 +66,14 @@ jobs:
         with:
           push: true
           tags: ghcr.io/itai-gendler/test:${{ steps.vars.outputs.sha_short }}
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Snyk to check Docker images for vulnerabilities
+        uses: snyk/actions/docker@master
+#        env:
+#          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: your/image-to-test
+          args: --severity-threshold=critical
