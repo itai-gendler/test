@@ -75,5 +75,5 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image: your/image-to-test
+          image: ghcr.io/itai-gendler/test:${{ steps.vars.outputs.sha_short }}
           args: --severity-threshold=critical
