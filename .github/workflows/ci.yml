@@ -70,6 +70,12 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
       - name: Run Snyk to check Docker images for vulnerabilities
         uses: snyk/actions/docker@master
         env:
